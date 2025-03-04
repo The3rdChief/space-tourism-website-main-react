@@ -2,4 +2,8 @@
 
 @theme {
   --color-space-blue: #0b0d17;
+  --color-font-blue: #d0d6f9;
+
+  --font-barlow: "Barlow Condensed", sans-serif;
+  --font-bellefair: "Bellefair", serif;
 }
