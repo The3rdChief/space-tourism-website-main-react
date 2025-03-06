@@ -39,7 +39,8 @@ const Destination = () => {
   };
 
   const activeTab = () => {
-    if (tab === 0) return "first:text-white first:after:bg-white";
+    if (tab === 0)
+      return "first:text-white first:after:bg-white hover:first:after:bg-white";
     if (tab === 1)
       return "[&:nth-child(2)]:text-white [&:nth-child(2)]:after:bg-white";
     if (tab === 2)
@@ -58,7 +59,7 @@ const Destination = () => {
       </h2>
 
       {data && (
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-5 justify-between">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-x-12 gap-y-8 justify-between">
           <div className="lg:h-[45.90rem] sm:h-[23.875rem] h-[12.75rem] flex justify-center items-center">
             <img
               src={data[tab].images.webp}
@@ -83,15 +84,17 @@ const Destination = () => {
               })}
             </div>
 
-            <div>
+            <article>
               <div className="border-b border-white/20 pb-8">
                 <h3 className="sm:text-8xl text-7xl font-bellefair uppercase">
                   {data[tab].name}
                 </h3>
-                <p>{data[tab].description}</p>
+                <p className="text-lg font-light text-font-blue hover:text-white transition-colors duration-200 leading-[180%] lg:max-w-[44ch]">
+                  {data[tab].description}
+                </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-2 uppercase pt-8">
+              <div className="grid grid-cols-2 max-[30rem]:grid-cols-1 max-[40rem]:justify-items-center gap-2 uppercase pt-8">
                 <div>
                   <h4 className="uppercase text-font-blue">Avg. distance</h4>
                   <p className="font-bellefair text-2xl">
@@ -103,7 +106,7 @@ const Destination = () => {
                   <p className="font-bellefair text-2xl">{data[tab].travel}</p>
                 </div>
               </div>
-            </div>
+            </article>
           </section>
         </div>
       )}

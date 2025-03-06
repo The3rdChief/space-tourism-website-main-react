@@ -41,16 +41,16 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col gap-8 tracking-widest sm:flex-row sm:items-center sm:gap-12 sm:[&>a]:h-full sm:[&>a]:text-center [&>a]:flex [&>a]:gap-2 [&>a]:uppercase [&>a]:place-items-center [&>a]:relative [&>a]:after:content-[''] [&>a]:after:absolute sm:[&>a]:after:left-0 max-[40rem]:[&>a]:after:top-0 [&>a]:after:right-0 [&>a]:after:transition-all [&>a]:after:duration-200 [&>a]:after:bottom-0 sm:[&>a]:after:h-0.5  max-[40rem]:[&>a]:after:w-0.75">
-            <Link to="/" className={`${activeClass()}`}>
+            <Link to="/" onClick={()=> setIsOpen(false)} className={`${activeClass()}`}>
               <b>00</b> Home
             </Link>
-            <Link to="/destination" className={`${activeClass()}`}>
+            <Link to="/destination" onClick={()=> setIsOpen(false)} className={`${activeClass()}`}>
               <b>01</b> Destination
             </Link>
-            <Link to="/crew" className={`${activeClass()}`}>
+            <Link to="/crew" onClick={()=> setIsOpen(false)} className={`${activeClass()}`}>
               <b>02</b> Crew
             </Link>
-            <Link to="/technology" className={`${activeClass()}`}>
+            <Link to="/technology" onClick={()=> setIsOpen(false)} className={`${activeClass()}`}>
               <b>03</b> Technology
             </Link>
           </div>
