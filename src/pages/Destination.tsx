@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { useState } from "react";
 
 interface DestinationsType {
@@ -13,9 +12,55 @@ interface DestinationsType {
   travel: string;
 }
 
+const destinationsData: DestinationsType[] = [
+  {
+    name: "Moon",
+    images: {
+      png: "../src/assets/destination/image-moon.png",
+      webp: "../src/assets/destination/image-moon.webp",
+    },
+    description:
+      "See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you're there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+    distance: "384,400 km",
+    travel: "3 days",
+  },
+  {
+    name: "Mars",
+    images: {
+      png: "../src/assets/destination/image-mars.png",
+      webp: "../src/assets/destination/image-mars.webp",
+    },
+    description:
+      "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. Hike to the summit, but be careful not to slip on the steep slopes.",
+    distance: "225 mil. km",
+    travel: "6 months",
+  },
+  {
+    name: "Europa",
+    images: {
+      png: "../src/assets/destination/image-europa.png",
+      webp: "../src/assets/destination/image-europa.webp",
+    },
+    description:
+      "The smallest of the gas giants, but certainly not the least, Europa offers a surface of ice and rock. It's no easy trip with temperatures ranging from -160 to -110 degrees celsius. But it's definitly worth it.",
+    distance: "628 mil. km",
+    travel: "3 years",
+  },
+  {
+    name: "Titan",
+    images: {
+      png: "../src/assets/destination/image-titan.png",
+      webp: "../src/assets/destination/image-titan.webp",
+    },
+    description:
+      "The only moon with an atmosphere in our solar system. Take your deep breaths, because the air is thick with nitrogen and methane. Put on your thermal underwear, too - it gets to -179 degrees celsius here.",
+    distance: "1.6 bil. km",
+    travel: "7 years",
+  },
+];
+
 const fetchData = async (): Promise<DestinationsType[]> => {
-  const { data } = await axios.get("http://localhost:3000/destinations");
-  return data;
+  return Promise.resolve(destinationsData);
 };
 
 const Destination = () => {
